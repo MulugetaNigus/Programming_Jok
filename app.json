@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "changeme1",
-    "slug": "changeme1",
+    "name": "Programming_Jok",
+    "slug": "Programming_Jok",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -18,15 +18,25 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.mullerking.programmingjockapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "e84d0bfc-1b57-40c4-a024-aed96fb0c963"
+        "projectId": "741a5cbc-5c8d-461b-b928-954f33ad5d65"
       }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "enabled": true,
+      "url": "https://u.expo.dev/741a5cbc-5c8d-461b-b928-954f33ad5d65",
+      "checkAutomatically": "ON_LOAD",
+      "fallbackToCacheTimeout": 0
     }
   }
 }
