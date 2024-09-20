@@ -9,8 +9,10 @@ import {
   Animated,
 } from "react-native";
 import Entypo from "@expo/vector-icons/Entypo";
+import { Button } from "@ui-kitten/components";
+import AntDesign from "@expo/vector-icons/AntDesign";
 
-function OnBoaring() {
+function OnBoaring({ navigation }) {
   const [timer, settimmer] = useState(5);
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const slideAnim = useRef(new Animated.Value(50)).current;
@@ -34,6 +36,11 @@ function OnBoaring() {
     ]).start();
   }, [timer]);
 
+  const handleSignWithGoogle = () => {
+    // Alert.alert("hi");
+    navigation.navigate("Home")
+  };
+
   return (
     <>
       <View style={styles.AppView}>
@@ -54,17 +61,22 @@ function OnBoaring() {
         </Animated.Text>
       </View>
       <View style={styles.pro}>
-        <Text
-          style={styles.slogan2}
-          onPress={() =>
-            Alert.alert(
-              "Hello Programmers",
-              "Lets have fun with programming joks !!!"
-            )
-          }
+        {/* sign in with google btn */}
+        <Button
+        onPress={ () => handleSignWithGoogle()}
+        size="large"
+          style={{
+            width: "100%",
+            padding: 18,
+            backgroundColor: "red",
+            borderColor: "red",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
         >
-          Programmer {timer}
-        </Text>
+          <Text>Let's have Fun</Text>
+        </Button>
       </View>
     </>
   );
@@ -92,13 +104,8 @@ const styles = StyleSheet.create({
     color: "#7751a",
   },
   pro: {
-    margin: 20,
+    margin: 10,
     alignItems: "center",
     justifyContent: "center",
-    borderWidth: 1,
-    borderColor: "grey",
-    padding: 14,
-    borderRadius: 10,
-    backgroundColor: "lightgrey",
   },
 });
