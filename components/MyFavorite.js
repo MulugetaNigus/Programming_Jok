@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet, SafeAreaView, Pressable } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { ScrollView } from "react-native-gesture-handler";
-import EvilIcons from '@expo/vector-icons/EvilIcons';
+import EvilIcons from "@expo/vector-icons/EvilIcons";
 
 function MyFavorite() {
   const [Fav, setFav] = useState([]);
@@ -29,7 +28,7 @@ function MyFavorite() {
     // first get all joks from localstorage
     const Existingjoks = await AsyncStorage.getItem("FavJok");
     let Joks = JSON.parse(Existingjoks);
-    FilterJok = Joks.filter( (jok) => jok.id != joke.id);
+    FilterJok = Joks.filter((jok) => jok.id != joke.id);
     // Save the updated array back to AsyncStorage
     await AsyncStorage.setItem("FavJok", JSON.stringify(FilterJok));
     getData();
@@ -62,7 +61,18 @@ function MyFavorite() {
             </View>
           </View>
         ))}
-        {Fav?.length == [] && <View style={{ flex: 1, alignItems: "center", justifyContent: "center", marginTop: 100 }}><Text style={styles.NoJok}>No Favorite Jok Yet !</Text></View>}
+        {Fav?.length == [] && (
+          <View
+            style={{
+              flex: 1,
+              alignItems: "center",
+              justifyContent: "center",
+              marginTop: 100,
+            }}
+          >
+            <Text style={styles.NoJok}>No Favorite Jok Yet !</Text>
+          </View>
+        )}
       </ScrollView>
     </SafeAreaView>
   );
@@ -77,7 +87,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: "grey",
     fontWeight: "500",
-    marginBottom: 10
+    marginBottom: 10,
   },
   NoJok: {
     // flex: 1,
@@ -88,7 +98,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: "gray",
     fontWeight: "500",
-    marginBottom: 10
+    marginBottom: 10,
   },
   JCard: {
     // flex: 1,

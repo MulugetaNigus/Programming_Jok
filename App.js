@@ -48,6 +48,7 @@ export default function App() {
   }
 
   // https://oromia.ministry.et/student-result/0832886?first_name=ASHANNAAFII&qr=
+  
   return (
     <>
       <GestureHandlerRootView style={{ flex: 1 }}>
